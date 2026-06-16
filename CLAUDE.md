@@ -16,3 +16,4 @@
 | 2026-05-21 | AI/Agent 직무 기준 템플릿 등록 (소크라에이아이/뉴로다임/페르소나AI에서 반복된 표준 양식) | skills/tailor-resume/assets/ai-agent-resume-template.md | 동일 형식 3회 반복 → 표준화 |
 | 2026-05-21 | 주요개발 불릿 괄호 주석 금지, 상세 프로젝트·경력은 각 5~7줄 유지 규칙 추가 | skills/tailor-resume | "괄호 빼고, 프로젝트+회사업무 5~7줄" 피드백 |
 | 2026-05-22 | 회사 스크리닝 스킬 추가 (도메인 목록 → 캐치 조회 → 적자+매출정체/인원5명이하 기준 ✅지원/❌거름 판정 표+파일) | skills/screen-companies | "도메인 입력하면 지원할지 정리" 요청 |
+| 2026-06-16 | 스크리닝 입력 경로 B 추가: 크롬 연결 시 원티드 저장 기업(북마크) 자동 수집 → 원티드 `__NEXT_DATA__`+`financial-report-for-wanted` API로 인원·매출·영업이익 조회. 상세는 references/wanted-bookmarks.md | skills/screen-companies | "크롬 연결되면 북마크 찾아주는 기능 추가" 요청 (2026-05-22 즉흥 작업을 정식 절차화) |
