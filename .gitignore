@@ -1,0 +1,11 @@
+# 개인 데이터 (실명·이력서·채용공고·생성물) — 깃에 올리지 않음
+/data/
+
+# 로컬 권한/설정 (머신별)
+/.claude/settings.local.json
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
