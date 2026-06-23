@@ -13,7 +13,7 @@
 
 ## 1. 크롬 연결·로그인 확인 (전제)
 
-1. `ToolSearch`로 `mcp__claude-in-chrome__tabs_context_mcp`·`navigate`·`javascript_tool`·`tabs_create_mcp`를 로드.
+1. `ToolSearch`로 `mcp__claude-in-chrome__tabs_context_mcp`·`navigate`·`javascript_tool`·`read_network_requests`·`tabs_create_mcp`를 로드.
 2. `tabs_context_mcp`로 연결 확인. 새 탭에서 `https://jumpit.saramin.co.kr` 를 한 번 연다(이후 API는 이 탭에서 `fetch`).
 3. **로그인 확인(필수):** 검색은 비로그인도 되지만 **스크랩은 로그인 필수**다.
    ```

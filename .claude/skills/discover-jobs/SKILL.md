@@ -25,7 +25,7 @@ description: 사용자가 "이력서 기준으로 지원할 회사 찾아줘", "
 `ToolSearch`로 `tabs_context_mcp`·`navigate`·`get_page_text`·`javascript_tool`·`read_network_requests`·`tabs_create_mcp`를 한 번에 로드 → `tabs_context_mcp`로 연결 확인. 미연결/미로그인이면 중단·안내.
 
 ### 3. 제외 목록 로드
-- **이미 북마크된 공고**: 각 사이트 어댑터의 "기존 북마크 조회"로 확보(경로 B reference 재사용).
+- **이미 북마크된 공고**: 각 사이트 어댑터의 "기존 북마크 조회"로 확보. 원티드·점핏은 검색 응답의 플래그(`is_bookmark`/`scraped`)로 즉시 판별되지만, **사람인·잡코리아는 검색 응답에 플래그가 없으므로** 각 어댑터의 "중복 제거" 절차(경로 B 스크랩 목록 선조회)를 따른다.
 - **이미 거른 회사**: `data/company-screening/*.md`를 읽어 ❌거름 판정 회사명을 수집. 회사명 정규화(`㈜`·`(주)`·`주식회사`·영문 병기 제거) 후 대조.
 
 ### 4. 사이트별 검색
@@ -33,7 +33,7 @@ description: 사용자가 "이력서 기준으로 지원할 회사 찾아줘", "
 
 | 사이트 | 어댑터 | 데이터/스크랩 방식 |
 |--------|--------|------|
-| 원티드 | `references/wanted-discovery.md` | JSON API 검색 + 북마크 POST(토글) |
+| 원티드 | `references/wanted-discovery.md` | JSON API 검색 + 북마크 POST(토글 — is_bookmark=false에만) |
 | 점핏 | `references/jumpit-discovery.md` | JSON API 검색(scraped 플래그) + 스크랩 POST/unscrap |
 | 사람인 | `references/saramin-discovery.md` | HTML 검색 파싱 + 스크랩 ajax(status=scrap/cancel) |
 | 잡코리아 | `references/jobkorea-discovery.md` | SPA 검색(GI_Read 링크) + 스크랩 버튼 클릭/GI_Scrap(Scrap_State 1/0) |

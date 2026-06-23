@@ -53,7 +53,7 @@ GET https://www.jobkorea.co.kr/Recruit/GI_Scrap?GI_No={공고번호}&Gno={Gno}&M
 
 ## 5. 중복 제거 — 이미 스크랩/거른 회사
 
-- **이미 스크랩:** 경로 B(`jobkorea-scraps.md`)의 스크랩 목록 `https://www.jobkorea.co.kr/User/Scrap?PageSize=100` 에서 기존 공고번호 집합을 모아 대조해 제외.
+- **이미 스크랩:** 경로 B(`jobkorea-scraps.md`)의 스크랩 목록 `https://www.jobkorea.co.kr/User/Scrap?PageSize=100` 에서 대조해 제외. ⚠️ 이 목록의 첫 앵커는 **회사 페이지**(`Co_read/C/{id}`)라 공고번호(GI_No)가 바로 안 나올 수 있다 → 항목에 `GI_Read` 링크가 있으면 공고번호로, 없으면 **회사명**(정규화 후)으로 대조한다.
 - **이미 거른 회사:** 회사명 정규화(`㈜`·`(주)`·`주식회사`·영문 병기 괄호 제거) 후 `data/company-screening/*.md` ❌거름 목록과 대조해 제외. (잘린 회사명은 og:title로 복원 후 비교.)
 
 ## 에러 핸들링
