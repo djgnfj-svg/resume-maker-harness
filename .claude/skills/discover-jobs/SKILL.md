@@ -31,12 +31,12 @@ description: 사용자가 "이력서 기준으로 지원할 회사 찾아줘", "
 ### 4. 사이트별 검색
 요청에서 사이트를 판단(특정 안 하면 로그인된 사이트 전부). 각 사이트의 어댑터 reference를 읽고 검색 실행 → 공고 후보 수집(공고명·회사명·링크·마감일·경력요건·기술스택).
 
-| 사이트 | 어댑터 | 도입 |
+| 사이트 | 어댑터 | 데이터/스크랩 방식 |
 |--------|--------|------|
-| 원티드 | `references/wanted-discovery.md` | 1차 |
-| 점핏 | `references/jumpit-discovery.md` | 1차 |
-| 사람인 | `references/saramin-discovery.md` | 2차 |
-| 잡코리아 | `references/jobkorea-discovery.md` | 2차 |
+| 원티드 | `references/wanted-discovery.md` | JSON API 검색 + 북마크 POST(토글) |
+| 점핏 | `references/jumpit-discovery.md` | JSON API 검색(scraped 플래그) + 스크랩 POST/unscrap |
+| 사람인 | `references/saramin-discovery.md` | HTML 검색 파싱 + 스크랩 ajax(status=scrap/cancel) |
+| 잡코리아 | `references/jobkorea-discovery.md` | SPA 검색(GI_Read 링크) + 스크랩 버튼 클릭/GI_Scrap(Scrap_State 1/0) |
 
 ### 5. 하드 필터
 - **경력**: 주니어~경력 3년 이하만. "경력 7년+ 필수" 등 제외.
